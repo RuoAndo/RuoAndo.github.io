@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="simcir.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir.css" />
+    <script type="text/javascript" src="simcir-basicset.js"></script>
+    <link rel="stylesheet" type="text/css" href="simcir-basicset.css" />
+    <script type="text/javascript" src="simcir-library.js"></script>
+    <script type="text/javascript">
+$(function() {
+
+  var $s = simcir;
+
+  var $simcir = $('#mySimcir');
+
+  var getCircuitData = function() {
+    return $s.controller(
+        $simcir.find('.simcir-workspace') ).text();
+  };
+  var setCircuitData = function(data) {
+    $s.setupSimcir($simcir, JSON.parse(data) );
+  };
+
+  // button click events
+  $('#getDataBtn').click(function() {
+    $('#dataArea').val(getCircuitData() );
+  });
+  $('#setDataBtn').click(function() {
+    setCircuitData($('#dataArea').val() );
+  });
+
+  // load default (just specifies circuit size).
+  setCircuitData('{ "width":600, "height":200 }');
+});
+    </script>
+    <title></title>
+  </head>
+  <body>
+    <div id="mySimcir"></div>
+
+{
+  "width":800,
+  "height":400,
+  "showToolbox":true,
+  "toolbox":[
+    {"type":"In"},
+    {"type":"Out"},
+    {"type":"Joint"},
+    {"type":"DC"},
+    {"type":"LED"},
+    {"type":"PushOff"},
+    {"type":"PushOn"},
+    {"type":"Toggle"},
+    {"type":"BUF"},
+    {"type":"NOT"},
+    {"type":"AND"},
+    {"type":"NAND"},
+    {"type":"OR"},
+    {"type":"NOR"},
+    {"type":"XOR"},
+    {"type":"XNOR"},
+    {"type":"OSC"},
+    {"type":"7seg"},
+    {"type":"16seg"},
+    {"type":"4bit7seg"},
+    {"type":"RotaryEncoder"},
+    {"type":"BusIn"},
+    {"type":"BusOut"},
+    {"type":"RS-FF"},
+    {"type":"JK-FF"},
+    {"type":"T-FF"},
+    {"type":"D-FF"},
+    {"type":"8bitCounter"},
+    {"type":"HalfAdder"},
+    {"type":"FullAdder"},
+    {"type":"4bitAdder"},
+    {"type":"2to4BinaryDecoder"},
+    {"type":"3to8BinaryDecoder"},
+    {"type":"4to16BinaryDecoder"}
+  ],
+  "devices":[
+    {"type":"DC","id":"dev0","x":64,"y":112,"label":"DC"},
+    {"type":"LED","id":"dev1","x":152,"y":112,"label":"LED"}
+  ],
+  "connectors":[
+    {"from":"dev1.in0","to":"dev0.out0"}
+  ]
+}
+    </div>
+    <textarea id="dataArea" style="width:600px; height:200px;"></textarea>
+  </body>
+</html>
