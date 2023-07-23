@@ -86,8 +86,18 @@ LightsOut.prototype.display = function(){
     	blink[7] = 0
     	blink[8] = 1
     	
-    	for(var y=0;y<9;y++)
-    		blink_bak[y] =0
+    	blink_bak[0] = 0
+    	blink_bak[1] = 0
+    	blink_bak[2] = 1
+    	blink_bak[3] = 0
+    	blink_bak[4] = 0
+    	blink_bak[5] = 1
+    	blink_bak[6] = 0
+    	blink_bak[7] = 0
+    	blink_bak[8] = 1
+    	
+    	//for(var y=0;y<9;y++)
+    	//	blink_bak[y] =0
     	for(var y=0;y<9;y++)
     		blink_bak_2[y] =0
     }
