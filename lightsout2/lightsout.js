@@ -85,19 +85,8 @@ LightsOut.prototype.display = function(){
     	blink[6] = 0
     	blink[7] = 0
     	blink[8] = 1
-    	
-    	blink_bak[0] = 0
-    	blink_bak[1] = 0
-    	blink_bak[2] = 1
-    	blink_bak[3] = 0
-    	blink_bak[4] = 0
-    	blink_bak[5] = 1
-    	blink_bak[6] = 0
-    	blink_bak[7] = 0
-    	blink_bak[8] = 1
-    	
-    	//for(var y=0;y<9;y++)
-    	//	blink_bak[y] =0
+    	for(var y=0;y<9;y++)
+    		blink_bak[y] =0
     	for(var y=0;y<9;y++)
     		blink_bak_2[y] =0
     }
@@ -115,6 +104,17 @@ LightsOut.prototype.display = function(){
     	blink.push(this.lit[y][x]);
     }
     }
+    
+        blink[0] = 0
+    	blink[1] = 0
+    	blink[2] = 1
+    	blink[3] = 0
+    	blink[4] = 0
+    	blink[5] = 1
+    	blink[6] = 0
+    	blink[7] = 0
+    	blink[8] = 1
+    
     
     for(var y=0;y<9;y++){
     	if(blink[y] != blink_bak_2[y])
