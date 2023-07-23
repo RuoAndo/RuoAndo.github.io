@@ -5,8 +5,6 @@ var blink_seq = [];
 
 var counter = 0;
 
-blink[0] = 1;
-
 function LightsOut(id,columns,rows,cellsize){
     this.id = id;
     if(columns == undefined) columns = 5;
@@ -38,6 +36,9 @@ function LightsOut(id,columns,rows,cellsize){
 	    div.lightsout = this;
 	    this.frame.appendChild(div);
 	}
+	
+	this.lit[0]=0;
+	
 	var br = document.createElement('br');
 	br.clear = 'all';
 	this.frame.appendChild(br);
