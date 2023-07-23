@@ -17,6 +17,16 @@ function LightsOut(id,columns,rows,cellsize){
     this.frame = document.getElementById(id);
     this.clickcount = [];
     this.lit = [];
+
+    	blink[0] = 0
+    	blink[1] = 0
+    	blink[2] = 1
+    	blink[3] = 0
+    	blink[4] = 0
+    	blink[5] = 1
+    	blink[6] = 0
+    	blink[7] = 0
+    	blink[8] = 1
     
     for(var y=0;y<this.rows;y++){
 	this.clickcount[y] = [];
@@ -104,18 +114,7 @@ LightsOut.prototype.display = function(){
     	blink.push(this.lit[y][x]);
     }
     }
-    
-        blink[0] = 0
-    	blink[1] = 0
-    	blink[2] = 1
-    	blink[3] = 0
-    	blink[4] = 0
-    	blink[5] = 1
-    	blink[6] = 0
-    	blink[7] = 0
-    	blink[8] = 1
-    
-    
+
     for(var y=0;y<9;y++){
     	if(blink[y] != blink_bak_2[y])
     		blink_bak[y]=1
